@@ -1,0 +1,22 @@
+@import url("/fonts.css");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "YekanBakh";
+  --color-primary-1: var(--color-primary-1);
+  --color-primary-2: var(--color-primary-2);
+  --color-primary-3: var(--color-primary-3);
+  --color-primary-4: var(--color-primary-4);
+}
+
+:root {
+  --color-primary-1: rgba(0, 99, 218, 1);
+  --color-primary-2: rgba(0, 209, 112, 1);
+  --color-primary-3: rgb(203, 227, 255, 1);
+  --color-primary-4: rgb(255, 226, 172, 1);
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}

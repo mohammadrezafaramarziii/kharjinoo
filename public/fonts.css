@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "YekanBakh";
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Yekan-Bakh-FaNum-Regular.woff') format('woff');
+  }
+  
+@font-face {
+    font-family: "YekanBakh";
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/Yekan-Bakh-FaNum-Medium.woff') format('woff');
+  }
+    
+@font-face {
+    font-family: "YekanBakh";
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/Yekan-Bakh-FaNum-Heavy.woff') format('woff');
+  }
+    
+@font-face {
+    font-family: "YekanBakh";
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Yekan-Bakh-FaNum-Bold.woff') format('woff');
+  }
+  
+@font-face {
+    font-family: "YekanBakh";
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/Yekan-Bakh-FaNum-Fat.woff') format('woff');
+  }
+  
+/* morabaa */
+@font-face {
+  font-family: "morabba";
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/morabba/Morabba-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: "morabba";
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/morabba/Morabba-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: "morabba";
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/morabba/Morabba-Bold.woff') format('woff');
+}
