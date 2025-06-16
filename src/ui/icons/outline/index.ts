@@ -10,3 +10,6 @@ export { CalendarIcon } from "./CalendarIcon";
 export { SupportIcon } from "./SupportIcon";
 export { AddCircleIcon } from "./AddCircleIcon";
 export { TrashIcon } from "./TrashIcon";
+export { AddCategoryIcon } from "./AddCategoryIcon";
+export { EditIcon } from "./EditIcon";
+export { CameraIcon } from "./CameraIcon";

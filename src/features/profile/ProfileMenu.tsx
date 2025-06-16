@@ -21,7 +21,7 @@ export default function ProfileMenu() {
     },
     {
       label: "تغییر رمز عبور",
-      link: "edit",
+      link: "change-password",
       icon: <PasswordIcon className="w-7 h-7" />,
       description: "تغییر رمز ورود شما به برنامه",
     },

@@ -15,7 +15,6 @@ type Props = {
 
 export default function CreateCardForm({ isOpen, onClose }: Props) {
   const { register, setValue, watch, reset } = useForm();
-  console.log(watch());
   const [isSelectCard, setIsSelectCard] = useState(false);
 
   const closeHandler = () => {

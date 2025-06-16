@@ -6,7 +6,20 @@ export default function RouteLayout() {
   const location = useLocation();
 
   const noAnimationRoutes = ["/dashboard/cards"];
+  const limitMenuList = ["/dashboard/profile/edit", "/dashboard/profile/change-password"];
+  const paddingLimited = [
+    "/dashboard/cards",
+    "/dashboard/profile/edit",
+    "/dashboard/profile/change-password",
+  ];
+
   const shouldAnimate = !noAnimationRoutes.some((route) =>
+    location.pathname.startsWith(route)
+  );
+  const showMenu = limitMenuList.some((route) =>
+    location.pathname.startsWith(route)
+  );
+  const paddingEnabled = paddingLimited.some((route) =>
     location.pathname.startsWith(route)
   );
 
@@ -15,7 +28,7 @@ export default function RouteLayout() {
   return (
     <div
       className={`w-full min-h-[100dvh] bg-primary-2 ${
-        !location.pathname.startsWith("/dashboard/cards") && "p-6 !pb-24"
+        !paddingEnabled && "p-6 !pb-24"
       }`}
     >
       <Wrapper
@@ -29,7 +42,7 @@ export default function RouteLayout() {
       >
         <Outlet />
       </Wrapper>
-      <Menu />
+      {!showMenu && <Menu />}
     </div>
   );
 }
