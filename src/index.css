@@ -2,7 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "YekanBakh";
+  --font-sans: "peyda";
+  --font-alibaba: "Alibaba";
   --color-primary-1: var(--color-primary-1);
   --color-primary-2: var(--color-primary-2);
   --color-primary-3: var(--color-primary-3);
@@ -10,10 +11,43 @@
 }
 
 :root {
-  --color-primary-1: rgba(0, 99, 218, 1);
-  --color-primary-2: rgba(0, 209, 112, 1);
-  --color-primary-3: rgb(203, 227, 255, 1);
-  --color-primary-4: rgb(255, 226, 172, 1);
+  --color-primary-1: #2256ff;
+  --color-primary-2: #f6f7f9;
+  --color-primary-3: #010057;
+  --color-primary-4: #929294;
+}
+
+@layer components {
+  .btn {
+    @apply py-3.5 px-4 flex items-center text-sm justify-center rounded-xl font-medium disabled:opacity-40;
+  }
+
+  .btn--primary {
+    @apply bg-primary-1 text-white border border-primary-1 !outline-4 !outline-primary-1/10;
+  }
+
+  .btn--secondary {
+    @apply bg-primary-2 text-primary-1 border border-primary-2 !outline-4 !outline-primary-2/10;
+  }
+
+  .btn--outline__primary {
+    @apply bg-transparent text-primary-1 border border-primary-1;
+  }
+
+  .btn--outline__secondary {
+    @apply bg-transparent text-primary-2 border border-primary-2;
+  }
+
+  .btn--sm {
+    @apply !p-2.5 !text-xs;
+  }
+
+  .textField__input {
+    @apply w-full appearance-none disabled:opacity-40 p-3.5 text-sm bg-white outline-0 border border-slate-200 focus:border-primary-1 duration-200 rounded-xl text-primary-3 placeholder-primary-4 font-medium;
+  }
+}
+
+body {
 }
 
 button {

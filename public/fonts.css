@@ -1,54 +1,68 @@
 @font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/Yekan-Bakh-FaNum-Regular.woff') format('woff');
-  }
-  
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 500;
-    src: url('/fonts/Yekan-Bakh-FaNum-Medium.woff') format('woff');
-  }
-    
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 600;
-    src: url('/fonts/Yekan-Bakh-FaNum-Heavy.woff') format('woff');
-  }
-    
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 700;
-    src: url('/fonts/Yekan-Bakh-FaNum-Bold.woff') format('woff');
-  }
-  
-@font-face {
-    font-family: "YekanBakh";
-    font-style: normal;
-    font-weight: 800;
-    src: url('/fonts/Yekan-Bakh-FaNum-Fat.woff') format('woff');
-  }
-  
-/* morabaa */
-@font-face {
-  font-family: "morabba";
+  font-family: "peyda";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/morabba/Morabba-Regular.woff') format('woff');
+  src: url("/fonts/PeydaWebFaNum-Regular.woff") format("woff");
 }
+
 @font-face {
-  font-family: "morabba";
+  font-family: "peyda";
   font-style: normal;
   font-weight: 600;
-  src: url('/fonts/morabba/Morabba-SemiBold.woff') format('woff');
+  src: url("/fonts/PeydaWebFaNum-SemiBold.woff") format("woff");
 }
+
 @font-face {
-  font-family: "morabba";
+  font-family: "peyda";
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/morabba/Morabba-Bold.woff') format('woff');
+  src: url("/fonts/PeydaWebFaNum-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "peyda";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/PeydaWebFaNum-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: Alibaba;
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/eot/Alibaba-Black.eot");
+  src: url("fonts/eot/Alibaba-Black.eot?#iefix") format("embedded-opentype"),
+    url("fonts/woff2/Alibaba-Black.woff2") format("woff2"),
+    url("fonts/woff/Alibaba-Black.woff") format("woff"),
+    url("fonts/ttf/Alibaba-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: Alibaba;
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/eot/Alibaba-Bold.eot");
+  src: url("fonts/eot/Alibaba-Bold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/woff2/Alibaba-Bold.woff2") format("woff2"),
+    url("fonts/woff/Alibaba-Bold.woff") format("woff"),
+    url("fonts/ttf/Alibaba-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: Alibaba;
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/eot/Alibaba-Light.eot");
+  src: url("fonts/eot/Alibaba-Light.eot?#iefix") format("embedded-opentype"),
+    url("fonts/woff2/Alibaba-Light.woff2") format("woff2"),
+    url("fonts/woff/Alibaba-Light.woff") format("woff"),
+    url("fonts/ttf/Alibaba-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Alibaba;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/eot/Alibaba-Regular.eot");
+  src: url("fonts/eot/Alibaba-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/woff2/Alibaba-Regular.woff2") format("woff2"),
+    url("fonts/woff/Alibaba-Regular.woff") format("woff"),
+    url("fonts/ttf/Alibaba-Regular.ttf") format("truetype");
 }
