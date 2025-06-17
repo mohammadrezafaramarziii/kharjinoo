@@ -1,8 +1,10 @@
-import React from "react";
-import { ArrowLeftIcon, LeftIcon } from "../../ui/icons/arrow";
+import React, { useState } from "react";
+import { LeftIcon } from "../../ui/icons/arrow";
 import { PasswordIcon, UserInfoIcon } from "../../ui/icons/outline";
 import { Link } from "react-router-dom";
 import { LogoutIcon } from "../../ui/icons/action";
+import useLogout from "../auth/useLogout";
+import Modal from "../../ui/Modal";
 
 type ProfileMenuType = {
   label: string;
@@ -12,6 +14,9 @@ type ProfileMenuType = {
 };
 
 export default function ProfileMenu() {
+  const { logoutUser } = useLogout();
+  const [isOpen, setIsOpen] = useState(false);
+
   const menus: ProfileMenuType[] = [
     {
       label: "ویرایش حساب کاربری",
@@ -41,6 +46,7 @@ export default function ProfileMenu() {
       <button
         type="button"
         className="w-full flex items-center justify-between text-red-500 text-sm"
+        onClick={() => setIsOpen(true)}
       >
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-red-500 text-primary-2 flex items-center justify-center">
@@ -55,6 +61,29 @@ export default function ProfileMenu() {
         </div>
         <LeftIcon className="w-6 h-6 text-primary-4" />
       </button>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <div>
+          <p className="mb-6 text-primary-3">
+            آیا مطمئن هستید که می‌خواهید از حساب کاربری خود خارج شوید؟
+          </p>
+          <div className="flex justify-end">
+            <button
+              type="button"
+              className="btn btn--secondary !bg-white ml-2"
+              onClick={() => setIsOpen(false)}
+            >
+              انصراف
+            </button>
+            <button
+              type="button"
+              className="btn btn--primary"
+              onClick={() => logoutUser()}
+            >
+              خروج
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

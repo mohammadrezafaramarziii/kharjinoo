@@ -1,5 +1,4 @@
-import React from "react";
-import TransactionItem from "../transactions/TransactionItem";
+import ReportCard from "../reports/ReportCard";
 
 type Props = {};
 
@@ -9,13 +8,14 @@ export default function LatestTransactions({}: Props) {
       {Array(10)
         .fill({})
         .map((item, index) => (
-          <TransactionItem
+          <ReportCard
             key={index}
             title="قرعه کشی بهمن"
             amount={2300000}
             bankName="blubank"
             datetime={new Date()}
             bank="/images/blu-bank.png"
+            index={index}
           />
         ))}
     </div>

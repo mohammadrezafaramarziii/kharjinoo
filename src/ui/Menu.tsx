@@ -38,16 +38,16 @@ export default function Menu() {
       activeIcon: <CardduotoneIcon className="w-6 h-6" />,
     },
     {
+      label: "تراکنش جدید",
+      link: "/dashboard/add-transactions",
+      icon: <PlusIcon className="w-6 h-6" />,
+      activeIcon: <PlusDuontoneIcon className="w-6 h-6" />,
+    },
+    {
       label: "دسته بندی",
       link: "/dashboard/category",
       icon: <CategoryIcon className="w-6 h-6" />,
       activeIcon: <CategoryDuontoneIcon className="w-6 h-6" />,
-    },
-    {
-      label: "دخل و خرج",
-      link: "/dashboard/transactions",
-      icon: <PlusIcon className="w-6 h-6" />,
-      activeIcon: <PlusDuontoneIcon className="w-6 h-6" />,
     },
     {
       label: "گزارشات",

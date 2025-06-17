@@ -7,7 +7,7 @@ export default function DashboardLayout() {
   return (
     <div>
       <div className="w-full">
-        <UserData name="محمدرضا فرامرزی" email="mf575583@gmail.com" />
+        <UserData />
       </div>
       <div className="w-full flex flex-col gap-6 my-6 relative bg-gradient-to-br from-primary-1 to-primary-3 p-6 rounded-3xl overflow-hidden">
         <div className="w-full h-full absolute top-0 right-0 bg-[url('/images/shape1.svg')] blur-sm bg-cover bg-center"></div>

@@ -7,36 +7,45 @@ import type {
   UseFormRegister,
 } from "react-hook-form";
 
-type InputProps<TFormValues extends FieldValues> = {
-  name: Path<TFormValues>;
+type SelectProps<TFormValues extends FieldValues> = {
   label?: string;
+  name: Path<TFormValues>;
+  options: { value: string; label: string }[];
   register: UseFormRegister<TFormValues>;
   validationSchema?: RegisterOptions<TFormValues, Path<TFormValues>>;
   errors?: FieldErrors<TFormValues>;
-} & ComponentProps<"input">;
+} & ComponentProps<"select">;
 
-export default function TextField<TFormValues extends FieldValues>({
+export default function RHFSelect<TFormValues extends FieldValues>({
   label,
+  options,
   errors,
   register,
   validationSchema,
   name,
   ...rest
-}: InputProps<TFormValues>) {
+}: SelectProps<TFormValues>) {
   const error = errors?.[name]?.message as string | undefined;
 
   return (
     <div className="flex flex-col">
       {label && (
-        <label className="font-bold text-xs text-primary-3 pr-2 mb-2">{label}</label>
+        <label className="font-bold text-xs text-primary-3 pr-2 mb-2">
+          {label}
+        </label>
       )}
-      <input
-        {...rest}
+      <select
         {...register(name, validationSchema)}
-        autoComplete="off"
+        {...rest}
         className={`textField__input ${error && "!border-red-600"}`}
-      />
-      {error && <div className="text-xs text-red-600 pr-2 pt-2">{error}</div>}
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {error && <div className="text-sm text-red-600 pr-2">{error}</div>}
     </div>
   );
 }

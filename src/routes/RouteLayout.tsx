@@ -6,11 +6,15 @@ export default function RouteLayout() {
   const location = useLocation();
 
   const noAnimationRoutes = ["/dashboard/cards"];
-  const limitMenuList = ["/dashboard/profile/edit", "/dashboard/profile/change-password"];
+  const limitMenuList = [
+    "/dashboard/profile/edit",
+    "/dashboard/profile/change-password",
+  ];
   const paddingLimited = [
     "/dashboard/cards",
     "/dashboard/profile/edit",
     "/dashboard/profile/change-password",
+    "/dashboard/add-transactions",
   ];
 
   const shouldAnimate = !noAnimationRoutes.some((route) =>

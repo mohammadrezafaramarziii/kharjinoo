@@ -1,19 +1,22 @@
+import { toLocalLongDate } from "../../utils/toLocalPersianDateTime";
+import useUser from "../auth/useUser";
+
 export default function ProfileData() {
+  const { user, isGetUser } = useUser();
+  const { avatarUrl, name, email } = user?.user_metadata || {};
+
   return (
     <div className="w-full mt-6 p-6 rounded-3xl overflow-hidden relative bg-gradient-to-br from-primary-1 to-primary-3 ">
-      <div className="w-full flex flex-col items-center gap-6 relative z-30">
+      <div className={`w-full flex flex-col items-center gap-6 relative z-30 duration-200 ${isGetUser ? "opacity-50 blur-md" : ""}`}>
         <div className="w-16 h-16 flex items-center justify-center text-primary-1 font-black text-2xl rounded-full outline-2 outline-primary-2 bg-primary-2 outline-offset-4">
-          <span>
-            م
-          </span>
+          <span>{name && name.slice(0, 1)}</span>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <h1 className="font-bold text-lg text-white">محمدرضا فرامرزی</h1>
-          <span className="inline-block text-primary-2 text-xs">
-            mf575583@gmail.com
-          </span>
+          <h1 className="font-bold text-lg text-white">{name || "---"}</h1>
+          <span className="inline-block text-primary-2 text-xs">{email || "---" }</span>
           <span className="inline-block text-primary-2/50 text-xs">
-            عضویت در: 25 مهر 1404
+            عضویت در:{" "}
+            {user?.created_at ? toLocalLongDate(new Date(user.created_at)) : ""}
           </span>
         </div>
       </div>
