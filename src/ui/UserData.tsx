@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function UserData() {
   const { user, isGetUser } = useUser();
-  const { avatarUrl, name, email } = user?.user_metadata || {};
+  const { avatarUrl, name, email } = user || {};
 
   return (
     <div className={`w-full flex items-center justify-between`}>

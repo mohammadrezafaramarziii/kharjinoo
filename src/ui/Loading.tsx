@@ -1,4 +1,4 @@
-type Color = "primary1" | "primary2" | "primary3" | "primary4";
+type Color = "primary1" | "primary2" | "primary3" | "primary4" | "danger";
 
 type Props = {
   color?: Color;
@@ -11,6 +11,7 @@ export default function Loading({ color = "primary1", width = 20 }: Props) {
     primary2: "!stroke-primary-2",
     primary3: "!stroke-primary-3",
     primary4: "!stroke-primary-4",
+    danger: "!stroke-red-500",
   };
 
   return (

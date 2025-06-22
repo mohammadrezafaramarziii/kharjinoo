@@ -34,6 +34,10 @@
     @apply bg-transparent text-primary-1 border border-primary-1;
   }
 
+  .btn--outline__danger {
+    @apply bg-transparent text-red-500 border border-red-500;
+  }
+
   .btn--outline__secondary {
     @apply bg-transparent text-primary-2 border border-primary-2;
   }
