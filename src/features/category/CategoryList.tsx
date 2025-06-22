@@ -67,7 +67,7 @@ function CategoryItem({ category }: { category: CategoryType }) {
 
   const deleteHandler = () => {
     deleteCategory(
-      { id: category?.id },
+      { id: category.id },
       {
         onSuccess: ({ status }) => {
           if (status === 204) {

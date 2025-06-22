@@ -1,4 +1,7 @@
-import type { CategoryType } from "../features/category/CategoryType";
+import type {
+  CategoryFormValuesType,
+  CategoryType,
+} from "../features/category/CategoryType";
 import { supabase } from "../lib/supabaseClient";
 
 const TABLE_NAME = "category";
@@ -15,7 +18,7 @@ export async function createCategoryApi({
   name,
   description,
   userId,
-}: CategoryType & { userId: string }) {
+}: CategoryFormValuesType & { userId: string }) {
   return await supabase
     .from(TABLE_NAME)
     .insert([{ name, description, user_id: userId }])

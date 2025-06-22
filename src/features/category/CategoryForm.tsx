@@ -4,11 +4,14 @@ import { useForm } from "react-hook-form";
 import useCreateCategory from "./useCreateCategory";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import type { CategoryEditType, CategoryType } from "./CategoryType";
+import type {
+  CategoryEditType,
+  CategoryFormValuesType,
+  CategoryType,
+} from "./CategoryType";
 import Loading from "../../ui/Loading";
 import translateErrorMsg from "../../utils/translateErrorMsg";
 import useUpdateCategory from "./useUpdateCategory";
-
 
 type Props = {
   onClose: () => void;
@@ -29,7 +32,7 @@ export default function CategoryForm({ onClose, editData }: Props) {
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm<CategoryType>({
+  } = useForm<CategoryFormValuesType>({
     resolver: zodResolver(schema),
     defaultValues: editData,
   });
@@ -41,7 +44,7 @@ export default function CategoryForm({ onClose, editData }: Props) {
     reset();
   };
 
-  const submitHandler = (values: CategoryType) => {
+  const submitHandler = (values: CategoryFormValuesType) => {
     if (isEdit) {
       updateCategory(
         { id: editData!.id, ...values },
