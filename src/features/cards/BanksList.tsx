@@ -1,41 +1,40 @@
-type Banks = {
-  name: string;
-  image: string;
-};
+import type { CardType } from "./CardType";
+
+type Bank = Pick<CardType, "name" | "image" | "englishName">;
 
 type Props = {
   selected: string;
-  onSelected: (bank: Banks) => void;
+  onSelected: (bank: Bank) => void;
 };
 
 export default function BanksList({ onSelected, selected }: Props) {
-  const banks: Banks[] = [
-    { name: "بانک مسکن", image: "maskan.png" },
-    { name: "بانک مهر اقتصاد", image: "mehr-eghtesad.png" },
-    { name: "بانک ملت", image: "mellat.png" },
-    { name: "بانک ملی", image: "melli.png" },
-    { name: "موسسه اعتباری نور", image: "noor.png" },
-    { name: "بانک پارسیان", image: "parsian.png" },
-    { name: "بانک پاسارگاد", image: "pasargad.png" },
-    { name: "بانک رفاه", image: "refah.png" },
-    { name: "بانک رسالت", image: "resalat.png" },
-    { name: "بانک صادرات", image: "saderat.png" },
-    { name: "بانک انصار", image: "ansar.png" },
-    { name: "بانک اینده", image: "ayande.png" },
-    { name: "بانک اقتصاد نوین", image: "eghtesad.png" },
-    { name: "بانک گردشگری", image: "gardeshgari.png" },
-    { name: "بانک ایران زمین", image: "iranzamin.png" },
-    { name: "بانک کشاورزی", image: "keshavarzi.png" },
-    { name: "موسسه اعتباری کوثر", image: "kosar.png" },
-    { name: "بانک سرمایه", image: "sarmaye.png" },
-    { name: "بانک سپه", image: "sepah.png" },
-    { name: "بانک شهر", image: "shahr.png" },
-    { name: "بانک سینا", image: "sina.png" },
-    { name: "بانک تجارت", image: "tejarat.png" },
-    { name: "بانک سامان", image: "saman.png" },
-    { name: "موسسه اعتباری ثامن", image: "samen.png" },
-    { name: "بانک صنعت و معدن", image: "sanat-o-madan.png" },
-    { name: "بلو بانک", image: "blu-bank.png" },
+  const banks: Bank[] = [
+    { name: "بانک مسکن", image: "maskan.png", englishName: "Maskan Bank" },
+    { name: "بانک مهر اقتصاد", image: "mehr-eghtesad.png", englishName: "Mehr Eghtesad Bank" },
+    { name: "بانک ملت", image: "mellat.png", englishName: "Mellat Bank" },
+    { name: "بانک ملی", image: "melli.png", englishName: "Melli Bank" },
+    { name: "موسسه اعتباری نور", image: "noor.png", englishName: "Noor Credit Institution" },
+    { name: "بانک پارسیان", image: "parsian.png", englishName: "Parsian Bank" },
+    { name: "بانک پاسارگاد", image: "pasargad.png", englishName: "Pasargad Bank" },
+    { name: "بانک رفاه", image: "refah.png", englishName: "Refah Bank" },
+    { name: "بانک رسالت", image: "resalat.png", englishName: "Resalat Bank" },
+    { name: "بانک صادرات", image: "saderat.png", englishName: "Saderat Bank" },
+    { name: "بانک انصار", image: "ansar.png", englishName: "Ansar Bank" },
+    { name: "بانک اینده", image: "ayande.png", englishName: "Ayande Bank" },
+    { name: "بانک اقتصاد نوین", image: "eghtesad.png", englishName: "Eghtesad Novin Bank" },
+    { name: "بانک گردشگری", image: "gardeshgari.png", englishName: "Gardeshgari Bank" },
+    { name: "بانک ایران زمین", image: "iranzamin.png", englishName: "Iranzamin Bank" },
+    { name: "بانک کشاورزی", image: "keshavarzi.png",englishName:"Keshavarzi Bank" },
+    { name: "موسسه اعتباری کوثر", image: "kosar.png",englishName:"Kosar Credit Institution" },
+    { name: "بانک سرمایه", image: "sarmaye.png",englishName:"Sarmaye Bank" },
+    { name: "بانک سپه", image: "sepah.png" ,englishName:"Sepah Bank" },
+    { name: "بانک شهر", image: "shahr.png",englishName:"Shahr Bank" },
+    { name: "بانک سینا", image: "sina.png",englishName:"Sina Bank" },
+    { name: "بانک تجارت", image: "tejarat.png",englishName:"Tejarat Bank" },
+    { name: "بانک سامان", image: "saman.png",englishName:"Saman Bank" },
+    { name: "موسسه اعتباری ثامن", image: "samen.png",englishName:"Samen Credit Institution" },
+    { name: "بانک صنعت و معدن", image: "sanat-o-madan.png",englishName:"Sanat o Madan Bank" },
+    { name: "بلو بانک", image: "blu-bank.png",englishName:"Blu Bank" },
   ];
 
   return (

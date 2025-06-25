@@ -28,7 +28,9 @@ export default function TextField<TFormValues extends FieldValues>({
   return (
     <div className="flex flex-col">
       {label && (
-        <label className="font-bold text-xs text-primary-3 pr-2 mb-2">{label}</label>
+        <label className="font-bold text-xs text-primary-3 pr-2 mb-2">
+          {label}
+        </label>
       )}
       <input
         {...rest}

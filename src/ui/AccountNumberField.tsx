@@ -1,16 +1,16 @@
-import React, { useRef } from "react";
+import React from "react";
 
 type Props = {
   accountNumValue: string;
-  onAccountNumValue: (name: string, value: string) => void;
+  onAccountNumValue: (value: string) => void;
+  errors?: string;
 };
 
 export default function AccountNumberField({
   accountNumValue,
   onAccountNumValue,
+  errors,
 }: Props) {
-  const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
-
   const parts = accountNumValue?.match(/.{1,4}/g) || ["", "", "", ""];
 
   const handleChange = (
@@ -22,10 +22,10 @@ export default function AccountNumberField({
     const newParts = [...parts];
     newParts[index] = value;
 
-    onAccountNumValue("accountNumber", newParts.join(""));
+    onAccountNumValue(newParts.join(""));
 
     if (value.length === 4 && index < 3) {
-      inputsRef.current[index + 1]?.focus();
+      (e.target.nextElementSibling as HTMLInputElement)?.focus();
     }
   };
 
@@ -37,7 +37,11 @@ export default function AccountNumberField({
       const value = e.currentTarget.value;
       if (value.length === 0 && index > 0) {
         e.preventDefault();
-        inputsRef.current[index - 1]?.focus();
+        const previousInput = (e.target as HTMLInputElement)
+          .previousElementSibling;
+        if (previousInput && previousInput instanceof HTMLInputElement) {
+          previousInput.focus();
+        }
       }
     }
   };
@@ -54,16 +58,19 @@ export default function AccountNumberField({
             key={index}
             type="text"
             maxLength={4}
-            ref={(el) => (inputsRef.current[index] = el)}
+            value={parts[index] || ""}
             onChange={(e) => handleChange(e, index)}
             onKeyDown={(e) => handleKeyDown(e, index)}
-            className="textField__input !text-center !text-lg"
+            className={`textField__input ${
+              errors && "border-red-600"
+            } !text-center !text-lg`}
             inputMode="numeric"
             pattern="\d*"
             placeholder="* * * *"
           />
         ))}
       </div>
+      {errors && <div className="text-xs text-red-600 pr-2 pt-2">{errors}</div>}
     </div>
   );
 }

@@ -45,7 +45,7 @@ export default function RHFSelect<TFormValues extends FieldValues>({
           </option>
         ))}
       </select>
-      {error && <div className="text-sm text-red-600 pr-2">{error}</div>}
+      {error && <div className="text-xs text-red-600 pr-2 pt-2">{error}</div>}
     </div>
   );
 }

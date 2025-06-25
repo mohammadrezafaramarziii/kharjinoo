@@ -7,7 +7,7 @@ import { supabase } from "../lib/supabaseClient";
 const TABLE_NAME = "category";
 
 export async function getCategoriesApi(userId: string) {
-  return await await supabase
+  return await supabase
     .from(TABLE_NAME)
     .select("*")
     .eq("user_id", userId)

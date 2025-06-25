@@ -6,9 +6,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import CategoryForm from "./CategoryForm";
 import useCategories from "../../hooks/useCategories";
-import type { CategoryEditType, CategoryType } from "./CategoryType";
+import type { CategoryType } from "./CategoryType";
 import Loading from "../../ui/Loading";
 import useDeleteCategory from "./useDeleteCategory";
+import { CategoryIcon } from "../../ui/icons/bold-duotone";
+import EmptySection from "../../ui/EmptySection";
+import { ToastError } from "../../ui/Toast";
+import translateErrorMsg from "../../utils/translateErrorMsg";
 
 export default function CategoryList() {
   const [isAdd, setIsAdd] = useState(false);
@@ -32,7 +36,7 @@ export default function CategoryList() {
         <div className="w-full h-[70dvh] flex items-center justify-center">
           <Loading width={45} />
         </div>
-      ) : (
+      ) : sortedCategories && sortedCategories?.length > 0 ? (
         <div className="w-full flex flex-col gap-4 mt-6">
           {sortedCategories?.map((category, index) => (
             <motion.div
@@ -45,6 +49,13 @@ export default function CategoryList() {
             </motion.div>
           ))}
         </div>
+      ) : (
+        <EmptySection
+          text="هنوز دسته بندی اضافه نکرده اید!"
+          btnText="افزودن دسته بندی جدید"
+          icon={<CategoryIcon className="w-16 h-16" />}
+          btn={{ onClick: () => setIsAdd(true) }}
+        />
       )}
     </div>
   );
@@ -104,10 +115,7 @@ function CategoryItem({ category }: { category: CategoryType }) {
         </div>
       </Modal>
       <Modal isOpen={isEdit} onClose={() => setIsEdit(false)}>
-        <CategoryForm
-          onClose={() => setIsEdit(false)}
-          editData={category as CategoryEditType}
-        />
+        <CategoryForm onClose={() => setIsEdit(false)} editData={category} />
       </Modal>
       <Modal isOpen={isDelete} onClose={() => setIsDelete(false)}>
         <div>

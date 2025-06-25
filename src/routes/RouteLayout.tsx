@@ -15,6 +15,7 @@ export default function RouteLayout() {
     "/dashboard/profile/edit",
     "/dashboard/profile/change-password",
     "/dashboard/add-transactions",
+    "/dashboard/transaction-detail",
   ];
 
   const shouldAnimate = !noAnimationRoutes.some((route) =>

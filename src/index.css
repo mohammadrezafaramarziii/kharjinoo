@@ -30,6 +30,10 @@
     @apply bg-primary-2 text-primary-1 border border-primary-2 !outline-4 !outline-primary-2/10;
   }
 
+  .btn--danger {
+    @apply bg-red-500 text-primary-2 border border-red-500 !outline-4 !outline-red-500/10;
+  }
+
   .btn--outline__primary {
     @apply bg-transparent text-primary-1 border border-primary-1;
   }

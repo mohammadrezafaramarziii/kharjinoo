@@ -1,7 +1,11 @@
 export type CardType = {
-  image: string;
   name: string;
-  eName: string;
-  accountNumber: number;
-  expired: string;
+  bName: string;
+  englishName?: string;
+  bankNumber: string;
+  expireMonth: string;
+  expireYear: string;
+  image?: string;
+  isDefault: boolean;
+  inventory: number;
 };

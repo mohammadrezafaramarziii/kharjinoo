@@ -11,5 +11,10 @@ export default function useCategories() {
     refetchOnWindowFocus: true,
   });
 
-  return { categories, isLoading };
+  const transformCategory = categories?.map((item) => ({
+    value: item.id,
+    label: item.name,
+  }));
+
+  return { categories, transformCategory, isLoading };
 }

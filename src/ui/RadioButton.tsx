@@ -16,7 +16,7 @@ export default function RadioButton({
   label,
 }: RadioButtonProps) {
   return (
-    <label htmlFor={id} className={`flex items-center gap-2`}>
+    <label htmlFor={id} className={`flex items-center gap-2 cursor-pointer`}>
       <input
         type="radio"
         name={name}
@@ -27,7 +27,7 @@ export default function RadioButton({
         hidden={true}
       />
       <div
-        className={`w-4 h-4 p-1 flex items-center justify-center rounded-full border ${
+        className={`w-4 h-4 p-0.5 flex items-center justify-center rounded-full border ${
           checked ? "border-primary-1" : "border-primary-4"
         }`}
       >

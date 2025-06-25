@@ -25,6 +25,6 @@ export const pageRoutes: PageRoutes = [
   { path: "cards", element: <Cards /> },
   { path: "category", element: <Category /> },
   { path: "reports", element: <Reports /> },
-  { path: "reports/:id", element: <ReportDetails /> },
+  { path: "transaction-detail/:id", element: <ReportDetails /> },
   { path: "add-transactions", element: <CreateTrasactions /> },
 ];
