@@ -17,7 +17,7 @@ export default defineConfig({
       manifest: {
         name: "خرجینو",
         short_name: "خرجینو",
-        description: "مدیریت مالی شخصی برای کاربران ایرانی",
+        description: "مدیریت مالی شخصی",
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
