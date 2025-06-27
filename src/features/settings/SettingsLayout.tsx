@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeftIcon, LeftIcon } from "../../ui/icons/arrow";
 import Title from "../../ui/Title";
-import { CalendarIcon, SupportIcon, TrashIcon } from "../../ui/icons/outline";
+import { SupportIcon, TrashIcon, WalletIcon } from "../../ui/icons/outline";
 
 type SettingMenu = {
   label: string;
@@ -13,21 +13,15 @@ type SettingMenu = {
 export default function SettingsLayout() {
   const menus: SettingMenu[] = [
     {
-      label: "نمایش تاریخ",
-      link: "edit",
-      icon: <CalendarIcon className="w-7 h-7" />,
-      description: "ویرایش فرمت تاریخ ها",
-    },
-    {
       label: "پشتیبانی",
-      link: "edit",
+      link: "support",
       icon: <SupportIcon className="w-7 h-7" />,
       description: "پشتیبانی و سوالات متداول",
     },
     {
       label: "درباره خرجینو",
-      link: "edit",
-      icon: <SupportIcon className="w-7 h-7" />,
+      link: "about-us",
+      icon: <WalletIcon className="w-7 h-7" />,
       description: "درباره ما، راه های ارتباطی",
     },
   ];
@@ -49,7 +43,7 @@ export default function SettingsLayout() {
             description={item.description}
           />
         ))}
-        <button className="w-full flex items-center justify-between text-red-500 text-sm">
+        {/* <button className="w-full flex items-center justify-between text-red-500 text-sm">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-red-500 text-primary-2 flex items-center justify-center">
               <TrashIcon className="w-7 h-7" />
@@ -62,7 +56,7 @@ export default function SettingsLayout() {
             </div>
           </div>
           <LeftIcon className="w-6 h-6 text-primary-4" />
-        </button>
+        </button> */}
       </div>
     </div>
   );

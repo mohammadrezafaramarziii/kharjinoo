@@ -6,7 +6,7 @@ export default function useTransition() {
   const { user } = useUser();
   const { data: transactions, isLoading } = useQuery({
     queryKey: ["get-transactions"],
-    queryFn: getTransactionsApi,
+    queryFn: () => getTransactionsApi({ userId: user.id }),
     retry: false,
     refetchOnWindowFocus: true,
   });

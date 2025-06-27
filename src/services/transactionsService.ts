@@ -4,7 +4,7 @@ import toEnglishNumber from "../utils/toEnglishNumber";
 
 const TABLE_NAME = "transactions";
 
-export async function getTransactionsApi() {
+export async function getTransactionsApi({ userId }: { userId: string }) {
   return await supabase
     .from(TABLE_NAME)
     .select(
@@ -14,6 +14,7 @@ export async function getTransactionsApi() {
     category (id, name)
   `
     )
+    .eq("user_id", userId)
     .then(({ data }) => data);
 }
 

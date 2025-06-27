@@ -14,3 +14,4 @@ export { AddCategoryIcon } from "./AddCategoryIcon";
 export { EditIcon } from "./EditIcon";
 export { CameraIcon } from "./CameraIcon";
 export { CloseSquareIcon } from "./CloseSquareIcon";
+export { WalletIcon } from "./WalletIcon";

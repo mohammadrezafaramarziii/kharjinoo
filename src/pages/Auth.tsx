@@ -10,6 +10,7 @@ export default function Auth() {
   const [step, setStep] = useState(0);
   const { user, isGetUser } = useUser();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
 
   const renderStep = (): ReactNode => {
     switch (step) {
@@ -31,13 +32,18 @@ export default function Auth() {
 
   useEffect(() => {
     if (!isGetUser) {
-      if (user) {
-        navigate("/dashboard", { replace: true });
-      }
+      const timeLoad = setTimeout(() => {
+        setIsLoading(false);
+        if (user) {
+          navigate("/dashboard", { replace: true });
+        }
+      }, 1500);
+
+      return () => clearTimeout(timeLoad);
     }
   }, [isGetUser, user]);
 
-  if (isGetUser) return <LoadingRoute />;
+  if (isLoading) return <LoadingRoute />;
 
   if (user) return null;
 

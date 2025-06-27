@@ -100,3 +100,8 @@ button {
     stroke-dashoffset: -125px;
   }
 }
+
+.recharts-responsive-container .recharts-wrapper{
+  max-width: 100% !important;
+  max-height: none !important;
+}

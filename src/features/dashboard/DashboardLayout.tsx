@@ -5,7 +5,12 @@ import useTransition from "../transactions/useTransactions";
 import CountUp from "react-countup";
 import useCards from "../cards/useCards";
 import States from "./State";
-import { CardIcon, CashOutIcon, DocumentIcon, WalletIcon } from "../../ui/icons/bold-duotone";
+import {
+  CardIcon,
+  CashOutIcon,
+  DocumentIcon,
+  WalletIcon,
+} from "../../ui/icons/bold-duotone";
 
 export default function DashboardLayout() {
   const { transactions, isLoading } = useTransition();
@@ -60,7 +65,7 @@ export default function DashboardLayout() {
         <div className="w-full h-full absolute top-0 right-0 bg-[url('/images/shape1.svg')] blur-sm bg-cover bg-center"></div>
 
         <div className="w-full flex items-start relative z-30">
-          <Link to="reports" className="btn--sm btn btn--secondary">
+          <Link to="charts" className="btn--sm btn btn--secondary">
             <ChartIcon className="w-5 h-5" />
           </Link>
         </div>
@@ -77,15 +82,17 @@ export default function DashboardLayout() {
               />
             )}
           </div>
-          <div className="text-sm mt-1 font-light">
-            از مجموع{" "}
-            {isGetCards ? (
-              "0"
-            ) : (
-              <CountUp end={totalInventoryCards} duration={3} separator="," />
-            )}{" "}
-            تومان موجودی کارت‌ها
-          </div>
+          {totalInventoryCards > 0 && (
+            <div className="text-sm mt-1 font-light">
+              از مجموع{" "}
+              {isGetCards ? (
+                "0"
+              ) : (
+                <CountUp end={totalInventoryCards} duration={3} separator="," />
+              )}{" "}
+              تومان موجودی کارت‌ها
+            </div>
+          )}
         </div>
 
         <Link
@@ -99,7 +106,7 @@ export default function DashboardLayout() {
         <States
           icon={<DocumentIcon className="w-7 h-7" />}
           label="تعداد تراکنش ها"
-          value={15}
+          value={transactions?.length || 0}
           valueTxt="تراکنش"
           variant="blue"
         />
@@ -112,7 +119,7 @@ export default function DashboardLayout() {
         />
         <States
           icon={<WalletIcon className="w-7 h-7" />}
-          label="مجموع درآمد کل"
+          label="مجموع واریز ماه"
           value={incomeThisMonth || 0}
           valueTxt="تومان"
           variant="green"
@@ -120,7 +127,7 @@ export default function DashboardLayout() {
         />
         <States
           icon={<CashOutIcon className="w-7 h-7" />}
-          label="مجموع هزینه کل"
+          label="مجموع برداشت ماه"
           value={expenseThisMonth || 0}
           valueTxt="تومان"
           variant="red"

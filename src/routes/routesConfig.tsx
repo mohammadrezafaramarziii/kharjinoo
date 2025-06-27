@@ -6,10 +6,12 @@ import Cards from "../pages/Cards";
 import Category from "../pages/Category";
 import EditProfile from "../pages/EditProfile";
 import ChangePassword from "../pages/ChangePassword";
-import Transactions from "../pages/Transactions";
 import Reports from "../pages/Reports";
 import ReportDetails from "../pages/ReportDetails";
 import CreateTrasactions from "../pages/CreateTrasactions";
+import Charts from "../pages/Charts";
+import Support from "../pages/Support";
+import AboutUs from "../pages/AboutUs";
 
 type PageRoutes = {
   path: string;
@@ -27,4 +29,7 @@ export const pageRoutes: PageRoutes = [
   { path: "reports", element: <Reports /> },
   { path: "transaction-detail/:id", element: <ReportDetails /> },
   { path: "add-transactions", element: <CreateTrasactions /> },
+  { path: "charts", element: <Charts /> },
+  { path: "settings/support", element: <Support /> },
+  { path: "settings/about-us", element: <AboutUs /> },
 ];
