@@ -101,18 +101,21 @@ export default function ChangePasswordForm() {
             name="password"
             register={register}
             errors={errors}
+            type="password"
           />
           <TextField
             placeholder="رمز عبور جدید را وارد نمایید"
             name="newPassword"
             register={register}
             errors={errors}
+            type="password"
           />
           <TextField
             placeholder="تکرار رمز عبور جدید را وارد نمایید"
             name="confirmNewPassword"
             register={register}
             errors={errors}
+            type="password"
           />
         </div>
       </div>

@@ -66,7 +66,7 @@ export default function RegisterForm({ onStep }: Props) {
 
   const onSignup = (values: RegisterFormValues): void => {
     mutateSignUp(
-      { ...values},
+      { ...values },
       {
         onSuccess: ({ data, error }) => {
           if (error) {
@@ -148,12 +148,14 @@ export default function RegisterForm({ onStep }: Props) {
             name="password"
             register={register}
             errors={errors}
+            type="password"
           />
           <TextField
             placeholder="تکرار رمز عبور خود را وارد نمایید"
             name="confirmPassword"
             register={register}
             errors={errors}
+            type="password"
           />
         </div>
         <div className="w-full space-y-4 pb-10">

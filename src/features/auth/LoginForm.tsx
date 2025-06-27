@@ -93,6 +93,7 @@ export default function LoginForm({ onStep }: Props) {
             name="password"
             register={register}
             errors={errors}
+            type="password"
           />
         </div>
         <div className="w-full space-y-4 pb-10">

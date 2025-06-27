@@ -5,3 +5,5 @@ export { ErrorIcon } from "./ErrorIcon";
 export { PlusIcon } from "./PlusIcon";
 export { MinusIcon } from "./MinusIcon";
 export { CheckCircleIcon } from "./CheckCircleIcon";
+export { EyeOpenIcon } from "./EyeOpenIcon";
+export { EyeCloseIcon } from "./EyeCloseIcon";
