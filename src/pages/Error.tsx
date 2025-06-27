@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import useUser from "../features/auth/useUser";
 import { useEffect } from "react";
 
 export default function Error() {
-  const navigate = useNavigate();
   const { isGetUser, user } = useUser();
 
   useEffect(() => {

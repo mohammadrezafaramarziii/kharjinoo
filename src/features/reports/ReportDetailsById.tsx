@@ -1,6 +1,5 @@
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { ArrowLeftIcon, LeftIcon } from "../../ui/icons/arrow";
-import { EditIcon, TrashIcon } from "../../ui/icons/outline";
 import Title from "../../ui/Title";
 import { toLocalShortDate } from "../../utils/toLocalPersianDateTime";
 import useReportById from "./useReportById";

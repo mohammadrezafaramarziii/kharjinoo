@@ -5,7 +5,6 @@ import useCreateCategory from "./useCreateCategory";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import type {
-  CategoryEditType,
   CategoryFormValuesType,
   CategoryType,
 } from "./CategoryType";
@@ -15,7 +14,7 @@ import useUpdateCategory from "./useUpdateCategory";
 
 type Props = {
   onClose: () => void;
-  editData?: CategoryEditType;
+  editData?: CategoryType;
 };
 
 const schema = z.object({

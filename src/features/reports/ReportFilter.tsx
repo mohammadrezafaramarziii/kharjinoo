@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { FilterIcon, SearchIcon } from "../../ui/icons/action";
+import { FilterIcon } from "../../ui/icons/action";
 import { LeftIcon } from "../../ui/icons/arrow";
 import Modal from "../../ui/Modal";
-import BanksList from "../cards/BanksList";
 import Select from "../../ui/Select";
-import RadioButton from "../../ui/RadioButton";
 import useCategories from "../../hooks/useCategories";
 import type { Filters } from "./FilterType";
 import useCards from "../cards/useCards";
@@ -109,7 +107,7 @@ function Filters({
   ) => void;
   resetFilter: (filters: Filters) => void;
 }) {
-  const { transformCategory, isLoading } = useCategories();
+  const { transformCategory } = useCategories();
 
   return (
     <div className="w-full flex flex-col gap-4">

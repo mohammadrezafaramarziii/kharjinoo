@@ -66,7 +66,7 @@ export default function ChangePasswordForm() {
     checkCurrentPass(
       { email: user.email, password: values.password },
       {
-        onSuccess: ({ data, error }) => {
+        onSuccess: ({ error }) => {
           if (error) {
             setError("password", { message: "رمز عبور فعلی نادرست است" });
           } else {

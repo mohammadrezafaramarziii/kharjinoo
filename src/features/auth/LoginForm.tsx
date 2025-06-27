@@ -41,7 +41,7 @@ export default function LoginForm({ onStep }: Props) {
 
   const onSubmit = (values: LoginFormValues) => {
     mutateLogin(values, {
-      onSuccess: ({ data, error }) => {
+      onSuccess: ({ error }) => {
         if (error) {
           ToastError(translateErrorMsg(error.message));
         } else {

@@ -11,8 +11,6 @@ import Loading from "../../ui/Loading";
 import useDeleteCategory from "./useDeleteCategory";
 import { CategoryIcon } from "../../ui/icons/bold-duotone";
 import EmptySection from "../../ui/EmptySection";
-import { ToastError } from "../../ui/Toast";
-import translateErrorMsg from "../../utils/translateErrorMsg";
 
 export default function CategoryList() {
   const [isAdd, setIsAdd] = useState(false);

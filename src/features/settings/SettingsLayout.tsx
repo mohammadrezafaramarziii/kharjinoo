@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeftIcon, LeftIcon } from "../../ui/icons/arrow";
 import Title from "../../ui/Title";
-import { SupportIcon, TrashIcon, WalletIcon } from "../../ui/icons/outline";
+import { SupportIcon, WalletIcon } from "../../ui/icons/outline";
 
 type SettingMenu = {
   label: string;

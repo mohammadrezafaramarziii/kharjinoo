@@ -93,7 +93,6 @@ export default function RegisterForm({ onStep }: Props) {
             }
           }
         },
-        onError: (err) => {},
       }
     );
   };

@@ -12,7 +12,6 @@ export default function useLogout() {
       queryClient.removeQueries();
       navigate("/", { replace: true });
     },
-    onError: (err) => {},
   });
 
   return { logoutUser, isPending };

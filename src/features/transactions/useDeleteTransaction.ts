@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import useUser from "../auth/useUser";
 import { ToastSuccess } from "../../ui/Toast";
 import { deleteTransactionsApi } from "../../services/transactionsService";
@@ -10,7 +10,6 @@ import type { CategoryType } from "../category/CategoryType";
 
 export default function useDeleteTransaction() {
   const { user } = useUser();
-  const queryClient = useQueryClient();
   const navigate = useNavigate();
 
   const { mutate: deleteTransaction, isPending: isDeleting } = useMutation({

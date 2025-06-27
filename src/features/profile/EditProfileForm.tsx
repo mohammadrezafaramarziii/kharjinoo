@@ -18,13 +18,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 interface FormValuesType {
-  name?: string;
+  name: string;
   userId?: string;
   phoneNumber: string;
 }
 
 const schema = z.object({
-  name: z.string().optional(),
+  name: z
+    .string({ required_error: "نام و نام خانوادگی خود را وارد کنید" })
+    .nonempty("نام و نام خانوادگی خود را وارد کنید"),
   userId: z.string().optional(),
   phoneNumber: z
     .string({ required_error: "شماره موبایل را وارد کنید" })
@@ -33,7 +35,7 @@ const schema = z.object({
 
 export default function EditProfileForm() {
   const { user } = useUser();
-  const { name, phoneNumber, email, avatarUrl } = user || {};
+  const { name, phoneNumber, avatarUrl } = user || {};
   const [newAvatar, setNewAvatar] = useState<File>();
   const { mutate: updateProfile, isPending: isUpdating } = useMutation({
     mutationFn: updateProfileApi,
@@ -56,7 +58,7 @@ export default function EditProfileForm() {
   const updateHandler = async (values: FormValuesType) => {
     if (!newAvatar) {
       updateProfile(
-        { ...values },
+        { ...values, userId: user.id },
         {
           onSuccess: ({ status }) => {
             if (status === 204) {
@@ -92,7 +94,11 @@ export default function EditProfileForm() {
 
       if (getPublicUrl) {
         updateProfile(
-          { ...values, avatarUrl: `${getPublicUrl.publicUrl}?v=${Date.now()}` },
+          {
+            ...values,
+            userId: user.id,
+            avatarUrl: `${getPublicUrl.publicUrl}?v=${Date.now()}`,
+          },
           {
             onSuccess: ({ status }) => {
               if (status === 204) {
@@ -160,6 +166,7 @@ export default function EditProfileForm() {
             placeholder="نام و نام خانوادگی خود را وارد کنید"
             name="name"
             register={register}
+            errors={errors}
           />
           {/* <TextField
             placeholder="ایمیل خود را وارد نمایید"

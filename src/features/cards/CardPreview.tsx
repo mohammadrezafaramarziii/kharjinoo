@@ -20,7 +20,7 @@ export default function CardPreview({ card }: Props) {
   });
   const queryClient = useQueryClient();
   const { user } = useUser();
-  const { changeDefaultCard, isChanging } = useChangeDefault();
+  const { changeDefaultCard } = useChangeDefault();
 
   const deleteHandler = () => {
     mutateDelete(
