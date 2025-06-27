@@ -28,8 +28,8 @@ export default function DashboardLayout() {
       .reduce((sum, t) => sum + Number(t.amount), 0);
 
   const totalInventoryCards =
-    !isGetCards && cards?.reduce((sum, c) => sum + c.inventory, 0);
-
+    !isGetCards && cards?.reduce((sum, c) => sum + Math.max(c.inventory, 0), 0);
+    
   const incomeThisMonth = transactions
     ?.filter((t) => {
       const date = new Date(t.date);
@@ -55,6 +55,7 @@ export default function DashboardLayout() {
       );
     })
     .reduce((sum, t) => sum + Number(t.amount), 0);
+  console.log(totalInventoryCards);
 
   return (
     <div>
@@ -71,17 +72,31 @@ export default function DashboardLayout() {
         </div>
 
         <div className="relative z-30 text-center text-white">
-          <div className="text-3xl font-black">
+          <div
+            className={`${
+              incomeTotal - expenseTotal < 0 && "text-red-500"
+            } text-3xl font-black`}
+          >
             {isLoading ? (
               "0"
             ) : (
+              <>
               <CountUp
                 end={incomeTotal - expenseTotal}
                 duration={3}
                 separator=","
               />
+              <div className="text-xs inline-block pr-1.5">
+                تومان
+              </div>
+              </>
             )}
           </div>
+          {incomeTotal - expenseTotal < 0 && (
+            <div className="text-sm text-red-500 text-center pt-2">
+              شما در این ماه بیشتر از درآمدتان خرج کرده‌اید!
+            </div>
+          )}
           {totalInventoryCards > 0 && (
             <div className="text-sm mt-1 font-light">
               از مجموع{" "}
