@@ -58,7 +58,7 @@ export default function Menu() {
   ];
 
   return (
-    <div className="w-full sm:max-w-sm p-4 fixed bottom-0 right-0 sm:right-1/2 sm:translate-x-1/2 bg-white shadow-[0_-7px_15px_-3px_rgba(0,0,0,0.1)]">
+    <div className="w-full sm:max-w-sm p-4 fixed bottom-0 right-0 z-50 sm:right-1/2 sm:translate-x-1/2 bg-white shadow-[0_-7px_15px_-3px_rgba(0,0,0,0.1)]">
       <ul className="w-full grid grid-cols-5 gap-2">
         {menu.map((item, index) => (
           <MenuItem

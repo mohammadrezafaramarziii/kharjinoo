@@ -117,34 +117,36 @@ export default function ReportBarChart() {
         </div>
 
         <div className="flex-1">
-          <div className="w-full h-auto relative flex items-end justify-between">
-            {chartData.map((item, index) =>
-              Number(index - 1) % 6 === 0 || item.deposit ? (
-                <div className="w-full fex flex-col">
-                  <div className="w-full h-[200px] flex flex-col gap-1 justify-end items-center border-b border-b-primary-3/30">
-                    {item.deposit > 0 ? (
-                      <div className="text-xs text-primary-3 text-center whitespace-nowrap">
-                        {numberWithCommas(item.deposit)} ت
-                      </div>
-                    ) : null}
-                    <div
-                      className="w-2 bg-green-500 rounded-t-full transition-all duration-700"
-                      style={{
-                        height:
-                          item.deposit === 0
-                            ? "0"
-                            : `calc(max(${
-                                (item.deposit / maxDeposit) * 100
-                              }%, 4px))`,
-                      }}
-                    />
+          <div className="w-full h-auto relative">
+            <div className="w-full relative z-30 flex items-end justify-between overflow-y-hidden overflow-x-auto">
+              {chartData.map((item, index) =>
+                Number(index - 1) % 6 === 0 || item.deposit ? (
+                  <div className="w-full fex flex-col">
+                    <div className="min-w-10 w-full h-[200px] flex flex-col gap-1 justify-end px-1 items-center border-b border-b-primary-3/30">
+                      {item.deposit > 0 ? (
+                        <div className="text-xs text-primary-3 text-center whitespace-nowrap">
+                          {numberWithCommas(item.deposit)} ت
+                        </div>
+                      ) : null}
+                      <div
+                        className="w-2 bg-green-500 rounded-t-full transition-all duration-700"
+                        style={{
+                          height:
+                            item.deposit === 0
+                              ? "0"
+                              : `calc(max(${
+                                  (item.deposit / maxDeposit) * 100
+                                }%, 4px))`,
+                        }}
+                      />
+                    </div>
+                    <div className="w-full text-xs text-primary-3 text-center pt-2">
+                      {item.label}
+                    </div>
                   </div>
-                  <div className="w-full text-xs text-primary-3 text-center pt-2">
-                    {item.label}
-                  </div>
-                </div>
-              ) : null
-            )}
+                ) : null
+              )}
+            </div>
             <div className="absolute w-full h-full flex flex-col justify-between gap-2 items-center top-0 right-0">
               <div className="w-full h-px bg-primary-3/5 last:h-0"></div>
               <div className="w-full h-px bg-primary-3/5 last:h-0"></div>
@@ -168,34 +170,36 @@ export default function ReportBarChart() {
         </div>
 
         <div className="flex-1">
-          <div className="w-full h-auto relative flex items-end justify-between">
-            {chartData.map((item, index) =>
-              Number(index - 1) % 6 === 0 || item.wthdrawal ? (
-                <div className="w-full fex flex-col">
-                  <div className="w-full h-[200px] flex flex-col gap-1 justify-end items-center border-b border-b-primary-3/30">
-                    {item.wthdrawal > 0 ? (
-                      <div className="text-xs text-primary-3 text-center whitespace-nowrap">
-                        {numberWithCommas(item.wthdrawal)} ت
-                      </div>
-                    ) : null}
-                    <div
-                      className="w-2 bg-red-600 rounded-t-full transition-all duration-700"
-                      style={{
-                        height:
-                          item.wthdrawal === 0
-                            ? "0"
-                            : `calc(max(${
-                                (item.wthdrawal / maxWthdrawal) * 100
-                              }%, 4px))`,
-                      }}
-                    />
+          <div className="w-full h-auto relative">
+            <div className="w-full relative z-30 flex items-end justify-between overflow-y-hidden overflow-x-auto">
+              {chartData.map((item, index) =>
+                Number(index - 1) % 6 === 0 || item.wthdrawal ? (
+                  <div className="w-full flex flex-col">
+                    <div className="min-w-10 w-full h-[200px] flex flex-col gap-1 justify-end px-1 items-center border-b border-b-primary-3/30">
+                      {item.wthdrawal > 0 ? (
+                        <div className="text-xs text-primary-3 text-center whitespace-nowrap">
+                          {numberWithCommas(item.wthdrawal)} ت
+                        </div>
+                      ) : null}
+                      <div
+                        className="w-2 bg-red-600 rounded-t-full transition-all duration-700"
+                        style={{
+                          height:
+                            item.wthdrawal === 0
+                              ? "0"
+                              : `calc(max(${
+                                  (item.wthdrawal / maxWthdrawal) * 100
+                                }%, 4px))`,
+                        }}
+                      />
+                    </div>
+                    <div className="w-full text-xs text-primary-3 text-center pt-2">
+                      {item.label}
+                    </div>
                   </div>
-                  <div className="w-full text-xs text-primary-3 text-center pt-2">
-                    {item.label}
-                  </div>
-                </div>
-              ) : null
-            )}
+                ) : null
+              )}
+            </div>
             <div className="absolute w-full h-full flex flex-col justify-between gap-2 items-center top-0 right-0">
               <div className="w-full h-px bg-primary-3/5 last:h-0"></div>
               <div className="w-full h-px bg-primary-3/5 last:h-0"></div>
