@@ -19,7 +19,7 @@ export default defineConfig({
         short_name: "خرجینو",
         description: "مدیریت مالی شخصی",
         start_url: "/",
-        display: "standalone",
+        display: "fullscreen",
         background_color: "#ffffff",
         theme_color: "#4a90e2",
         icons: [
